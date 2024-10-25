@@ -6,7 +6,7 @@ function startGeneratingPapieze() {
 
     setInterval(() => {
         let papiez = document.createElement('img');
-        papiez.src = 'papiez_new.jpg'; // Inne zdjęcie papieża
+        papiez.src = 'papiez_new.gif'; // Użycie pliku GIF
         papiez.classList.add('papiez');
         document.body.appendChild(papiez);
 
