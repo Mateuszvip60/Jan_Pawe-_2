@@ -1,9 +1,7 @@
-document.getElementById('startButton').addEventListener('click', startGeneratingPapieze);
+odocument.getElementById('startButton').addEventListener('click', startGeneratingPapieze);
 
 // Funkcja do generowania papieży bez limitu
 function startGeneratingPapieze() {
-    document.getElementById('backgroundMusic').play(); // Odtwarzaj muzykę
-
     setInterval(() => {
         let papiez = document.createElement('img');
         papiez.src = 'papiez_new.jpg'; // Inne zdjęcie papieża
@@ -30,10 +28,10 @@ function startGeneratingPapieze() {
             let currentY = parseFloat(papiez.style.top);
 
             // Sprawdzanie krawędzi, aby papież nie blokował się w rogach
-            if (currentX + speedX * directionX > window.innerWidth || currentX + speedX * directionX < 0) {
+            if (currentX + speedX * directionX > window.innerWidth - 100 || currentX + speedX * directionX < 0) {
                 directionX *= -1;
             }
-            if (currentY + speedY * directionY > window.innerHeight || currentY + speedY * directionY < 0) {
+            if (currentY + speedY * directionY > window.innerHeight - 100 || currentY + speedY * directionY < 0) {
                 directionY *= -1;
             }
 
