@@ -23,5 +23,7 @@ img {
 .papiez {
     position: absolute;
     width: 100px;
-    height: auto;
+    height: 100px;
+    border-radius: 50%; /* Nadaje okrągły kształt */
+    object-fit: cover; /* Dopasowanie obrazu wewnątrz okręgu */
 }
