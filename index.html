@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generowanie Papieży</title>
+    <title>Papieże</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Przycisk, na którym pojawia się obraz papieża -->
     <button id="startButton">
-        <img src="papiez_button.jpg" alt="Start" class="button-image">
+        <img src="papiez_start.jpg" alt="Papież" id="papiezButton">
     </button>
     
-    <!-- Element audio do odtwarzania Barki -->
-    <audio id="backgroundMusic" src="barka.mp3" loop></audio>
-
+    <audio id="backgroundMusic" loop>
+        <source src="barka.mp3" type="audio/mp3">
+        Twoja przeglądarka nie obsługuje elementu audio.
+    </audio>
+    
     <script src="script.js"></script>
 </body>
 </html>
