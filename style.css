@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+#startButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+img {
+    max-width: 100px;
+    height: auto;
+}
+
+.papiez {
+    position: absolute;
+    width: 100px;
+    height: auto;
+}
