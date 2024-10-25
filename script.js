@@ -46,3 +46,4 @@ function startGeneratingPapieze() {
         }
 
         // Rozpocznij animację dla nowego papieża
+                
