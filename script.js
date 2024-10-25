@@ -46,7 +46,3 @@ function startGeneratingPapieze() {
         }
 
         // Rozpocznij animację dla nowego papieża
-        requestAnimationFrame(movePapiez);
-
-    }, 10); // Papież generuje się co 10ms
-}
