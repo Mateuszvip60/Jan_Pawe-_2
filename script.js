@@ -44,5 +44,5 @@ function startGeneratingPapieze() {
         }
 
         movePapiez();
-    }, 100);  // Papież generuje się co 100ms
+    }, 10);  // Papież generuje się co 100ms
 }
