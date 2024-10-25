@@ -1,18 +1,10 @@
-const maxPapieze = 100; // Maksymalna liczba papieży na ekranie
-let papieze = []; // Tablica do przechowywania obiektów papieży
-
 document.getElementById('startButton').addEventListener('click', startGeneratingPapieze);
 
-// Funkcja do generowania papieży co 10ms
+// Funkcja do generowania papieży bez limitu
 function startGeneratingPapieze() {
     document.getElementById('backgroundMusic').play(); // Odtwarzaj muzykę
 
     setInterval(() => {
-        if (papieze.length >= maxPapieze) {
-            let oldPapiez = papieze.shift(); // Usuwanie najstarszego papieża
-            oldPapiez.remove();
-        }
-
         let papiez = document.createElement('img');
         papiez.src = 'papiez_new.jpg'; // Inne zdjęcie papieża
         papiez.classList.add('papiez');
@@ -31,9 +23,6 @@ function startGeneratingPapieze() {
         // Szybkość poruszania się
         let speedX = Math.random() * 5 + 1;
         let speedY = Math.random() * 5 + 1;
-
-        // Dodanie papieża do tablicy
-        papieze.push(papiez);
 
         // Funkcja animacji papieża
         function movePapiez() {
