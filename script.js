@@ -1,12 +1,20 @@
+const maxPapieze = 100; // Maksymalna liczba papieży na ekranie
+let papieze = []; // Tablica do przechowywania obiektów papieży
+
 document.getElementById('startButton').addEventListener('click', startGeneratingPapieze);
 
-// Funkcja do generowania papieży co 100ms
+// Funkcja do generowania papieży co 10ms
 function startGeneratingPapieze() {
-    document.getElementById('backgroundMusic').play();  // Odtwarzaj muzykę
-    
+    document.getElementById('backgroundMusic').play(); // Odtwarzaj muzykę
+
     setInterval(() => {
+        if (papieze.length >= maxPapieze) {
+            let oldPapiez = papieze.shift(); // Usuwanie najstarszego papieża
+            oldPapiez.remove();
+        }
+
         let papiez = document.createElement('img');
-        papiez.src = 'papiez_new.jpg';  // Inne zdjęcie papieża
+        papiez.src = 'papiez_new.jpg'; // Inne zdjęcie papieża
         papiez.classList.add('papiez');
         document.body.appendChild(papiez);
 
@@ -24,6 +32,10 @@ function startGeneratingPapieze() {
         let speedX = Math.random() * 5 + 1;
         let speedY = Math.random() * 5 + 1;
 
+        // Dodanie papieża do tablicy
+        papieze.push(papiez);
+
+        // Funkcja animacji papieża
         function movePapiez() {
             let currentX = parseFloat(papiez.style.left);
             let currentY = parseFloat(papiez.style.top);
@@ -40,9 +52,12 @@ function startGeneratingPapieze() {
             papiez.style.left = `${currentX + speedX * directionX}px`;
             papiez.style.top = `${currentY + speedY * directionY}px`;
 
-            requestAnimationFrame(movePapiez); // Płynny ruch
+            // Wywołanie ponownie animacji
+            requestAnimationFrame(movePapiez);
         }
 
-        movePapiez();
-    }, 10);  // Papież generuje się co 100ms
+        // Rozpocznij animację dla nowego papieża
+        requestAnimationFrame(movePapiez);
+
+    }, 10); // Papież generuje się co 10ms
 }
