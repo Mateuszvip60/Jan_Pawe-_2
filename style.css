@@ -3,7 +3,7 @@ body {
     padding: 0;
     overflow: hidden;
     background: url('background.jpg') no-repeat center center fixed; /* Obraz tła */
-    background-size: cover; /* Dopasowanie tła do okna */
+    background-size: cover;
 }
 
 #startButton {
@@ -14,11 +14,7 @@ body {
     border: none;
     background-color: transparent;
     cursor: pointer;
-}
-
-img {
-    max-width: 100px;
-    height: auto;
+    font-size: calc(1.5rem + 2vw); /* Zmienia rozmiar tekstu w zależności od szerokości ekranu */
 }
 
 .papiez {
@@ -26,5 +22,5 @@ img {
     width: 100px;
     height: 100px;
     border-radius: 50%; /* Nadaje okrągły kształt */
-    object-fit: cover; /* Dopasowanie obrazu wewnątrz okręgu */
+    object-fit: cover;
 }
