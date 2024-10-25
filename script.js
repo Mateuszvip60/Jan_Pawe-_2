@@ -1,16 +1,16 @@
 document.getElementById('startButton').addEventListener('click', startGeneratingPapieze);
 
+// Funkcja do generowania papieży bez limitu
 function startGeneratingPapieze() {
-    document.getElementById('startButton').style.display = 'none'; // Ukryj przycisk po kliknięciu
     document.getElementById('backgroundMusic').play(); // Odtwarzaj muzykę
 
     setInterval(() => {
         let papiez = document.createElement('img');
-        papiez.src = 'papiez_new.jpg'; // Ustaw obraz papieża
+        papiez.src = 'papiez_new.jpg'; // Inne zdjęcie papieża
         papiez.classList.add('papiez');
         document.body.appendChild(papiez);
 
-        // Ustaw losową pozycję początkową
+        // Ustawienie losowej pozycji początkowej
         let startX = Math.random() * window.innerWidth;
         let startY = Math.random() * window.innerHeight;
         papiez.style.left = `${startX}px`;
@@ -29,7 +29,7 @@ function startGeneratingPapieze() {
             let currentX = parseFloat(papiez.style.left);
             let currentY = parseFloat(papiez.style.top);
 
-            // Sprawdzanie krawędzi, aby papież nie blokował się w rogach
+            // Sprawdzanie krawędzi, aby papież nie zniknął przy zmianie rozmiaru ekranu
             if (currentX + speedX * directionX > window.innerWidth - 100 || currentX + speedX * directionX < 0) {
                 directionX *= -1;
             }
