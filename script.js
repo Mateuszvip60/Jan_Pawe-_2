@@ -1,14 +1,16 @@
-odocument.getElementById('startButton').addEventListener('click', startGeneratingPapieze);
+document.getElementById('startButton').addEventListener('click', startGeneratingPapieze);
 
-// Funkcja do generowania papieży bez limitu
 function startGeneratingPapieze() {
+    document.getElementById('startButton').style.display = 'none'; // Ukryj przycisk po kliknięciu
+    document.getElementById('backgroundMusic').play(); // Odtwarzaj muzykę
+
     setInterval(() => {
         let papiez = document.createElement('img');
-        papiez.src = 'papiez_new.jpg'; // Inne zdjęcie papieża
+        papiez.src = 'papiez_new.jpg'; // Ustaw obraz papieża
         papiez.classList.add('papiez');
         document.body.appendChild(papiez);
 
-        // Ustawienie losowej pozycji początkowej
+        // Ustaw losową pozycję początkową
         let startX = Math.random() * window.innerWidth;
         let startY = Math.random() * window.innerHeight;
         papiez.style.left = `${startX}px`;
